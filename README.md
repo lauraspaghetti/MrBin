@@ -11,6 +11,6 @@ It gives you information about the type of waste you entered, says in which bin 
 
 Some other types of waste need to be treated or recycled in a waste facility. When you enter a type of waste of this kind in the search engine, Mr. Bin shows you all the facilities in your town that take care of the type of waste entered. A "Details" button is added on every facility's sheet allowing you to know its contact, localization, the other type of waste they take care of and its opening hours. 
 
-## For now
+## What's next ? 
 
 Mr. Bin only covers the City of Paris, but we are currently working on the next version and other cities will be added. We will also working with more types of waste, allowing the user to find how to take care of any type of waste possible. 
