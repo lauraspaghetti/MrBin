@@ -1,0 +1,50 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} {{parent()}} - Nos auteurs{% endblock %}
+
+{% block content %}
+<h2>Tous nos auteurs</h2>
+
+<a href='{{ path("mrBin_etablissement_showall") }}'>Voir tous nos établissements</a>
+
+
+                    <h3>
+                        {{etablissement.nomEtablissement}}
+                    </h3>
+                    
+                    <p>
+                        {{etablissement.typeEtablissement}}
+                    </p>
+
+                    <p>
+                        {{etablissement.adresse}}
+                    </p>
+
+                    <p>
+                        {{etablissement.telephone}}
+                    </p>
+
+                    <p>
+                        {{etablissement.horaires}}
+                    </p> 
+
+                    <p>
+                        {% if etablissement.reconditionnement %}
+                            <img src="{{ asset("img/check.png") }}">
+                        {% else %}
+                            <img src="{{ asset("img/wrong_cross.png") }}">
+                        {% endif %}
+                    </p>
+
+                    {# A la place de cette boucle boucler sur les catégories de déchet
+                    
+                    <p>
+                        {% for typeDechet in etablissement.typeDechet %}
+                            {{typeDechet.nomTypeDechet}}
+                        {% endfor %}
+                    </p> #}
+
+
+
+
+{% endblock %}

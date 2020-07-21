@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} parent() - Les différents types de déchets{% endblock %}
+
+{% block content %}
+<h2>Les différents types de contenant</h2>
+
+<a href='{{ path("mrBin_contenant_create") }}'>Ajouter un type de contenant</a>
+
+
+
+
+        {% for contenant in AllContenants %}
+                 
+            <p>
+                <a href="{{ path("mrBin_contenant_show", {id : contenant.id}) }}">{{contenant.nomContenant}}</a>
+            </p>
+                
+        {% endfor %}
+  
+
+{% endblock %}

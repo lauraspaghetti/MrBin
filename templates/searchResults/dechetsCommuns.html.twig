@@ -1,0 +1,40 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+{{parent()}} - Résultats de recherche {#parent = pour récupérer le contenu du même block qui existe déjà dans base.html.twig#}
+{% endblock %}
+
+{% block content %}
+    <section class="bg-colorother2">
+        <div class="container topformat">
+            <h1 class="formatmargin">Résultat de la recherche</h1>
+            <!--Moteur de recherche-->
+                <div id='react-root'></div>
+            <!--Fin du moteur de recherche-->
+            <p class="mt-5 mb-5 sizefont">
+                Votre recherche renvoie vers le résultat suivant:
+            </p>
+            {# {% for categorie in allCategories %}
+                {% for dechet in categorie.typeDechets %} #}
+                    <div class="card w-75 searchcard shadow">
+                        <div class="card-body">
+                            <h5 class="card-title">{{typeDechet.nomTypeDechet | capitalize }}</h5>
+                            <p class="card-text">Déchet de la catégorie : 
+                                {{typeDechet.categorie.nomCategorie}} 
+                            </p>
+                            <p>
+                                Vous pourrez trouvez trouver tous les renseignements pour savoir
+                                où jeter ce déchet dans la page catégorie.
+                            </p>
+                            <a href="{{ path("mrBin_categories") }}" class="btn btn-primary bouton">Détails</a>
+                        </div>
+                    </div>
+                {# {% endfor %}
+            {% endfor %}
+             #}
+
+            
+        </div>
+   </section>
+{% endblock %}
+

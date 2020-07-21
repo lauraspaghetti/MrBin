@@ -1,0 +1,88 @@
+{% extends 'layout.html.twig' %}
+
+{# {% set backgroundContainerClass = 'bgLogin' %} #}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+<section class="fullscreen bg-login"> 
+    <div class='container'> 
+        <div class="row logintop">
+            <div class="col-sm-4 mt-5">
+                {% if error %}
+                    <div class="alert alert-danger">
+                        {{ error.messageKey|trans       (error.messageData, 'security') }}
+                    </div>
+                {% endif %}
+                {# A garder quand pour mettre sur la home si l'ux designer valide #}
+                {# {% if app.user %}
+                    <div class="mb-3">
+                        Bonjour {{ app.user.username }}, <a href="{{ path('app_logout') }}">Se déconnecter</a>
+                    </div>
+                {% endif %} #}
+                <form method="post">
+                    <h1 class id='toptitle'>Connexion</h1>
+                    <div class="form-group">
+                        <input 
+                            class="form-control" 
+                            type="email" 
+                            value="{{ last_username }}" 
+                            name="email" 
+                            id="inputEmail"
+                            placeholder="Email" 
+                            required autofocus
+                        >
+                    </div>
+                    <div class="form-group">
+                        <input 
+                            class="form-control" 
+                            type="password" 
+                            name="password" 
+                            id="inputPassword" 
+                            placeholder="Mot de passe"
+                            required
+                        >
+                    </div>
+                    <input 
+                        type="hidden" 
+                        name="_csrf_token"
+                        value="{{ csrf_token('authenticate') }}"
+                    >
+                    <div class="form-group">
+                        <a href"#">
+                            <button 
+                            class="btn" 
+                            type="submit">
+                                Je me connecte
+                            </button>
+                        </a>
+                    </div>
+                    <a href="{{ path("app_register") }}">
+                        <button 
+                        class="btn" 
+                        type="button">
+                            Créer mon compte
+                        </button>
+                    </a>
+                </form>
+            </div>
+            <div class="col-sm-8">
+                <img
+                    class="imagebg bgright"
+                    src="{{ asset('../img/beach_clean2.jpg') }}"
+                    alt="image de jeunes gens ramassant des déchets sur une plage"
+                />
+            </div>
+        </div>
+</section>
+{#
+    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+    See https://symfony.com/doc/current/security/remember_me.html
+
+     <div class="checkbox mb-3">
+        <label>
+            <input type="checkbox" name="_remember_me"> Remember me
+        </label>
+    </div>
+#}
+{% endblock %}

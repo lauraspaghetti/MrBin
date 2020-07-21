@@ -1,0 +1,35 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} {{parent()}} - Détail de votre recherche {% endblock %}
+
+{% block content %}
+    <section class="bg-colorother2">
+        <h1 class="text-center toptitle3">Détail de votre recherche</h1>
+        <div class="container">
+            <div class="card w-75 carte-top shadow">
+                <div class="card-body style-icon">
+                    <h5 class="card-title">
+                        {{etablissement.nomEtablissement}}
+                    </h5>
+                        {# Appel de l'iframe qui est en dur dans la bdd #}
+                        {{etablissement.iframe | raw }}
+
+                    <p class="card-text mt-3">
+                        {{etablissement.adresse}}
+                    </p>
+                    <p>Types de déchets acceptés:
+                        {% set categories = etablissement.categories | map((categorie) => "#{categorie.nomCategorie}") | join(', ') %}
+                            {# Appel de la variable #}
+                            {{ categories }}.
+                    </p>
+                    <p>
+                        Horaires : {{etablissement.horaires | lower }}
+                    </p> 
+                    <p>
+                        <i class="fas fa-phone-alt"></i>0{{etablissement.telephone}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+{{parent()}} - Accueil {#parent = pour récupérer le contenu du même block qui existe déjà dans base.html.twig#}
+{% endblock %}
+
+
+{% block content %}
+<!--section avec les catégories de déchets principaux-->
+    <section class="topsection">
+        <h1>les catégories de déchets</h1>
+        <p class="text-center">
+          trouver facilement une catégorie de déchets pour un tri simplifié
+        </p>
+    </section>
+    <section class="bg-colorfirst">
+        <div class="container">
+            <h2 id="topmargin" class="text-center font-weight-bolder">Les déchets communs</h2>
+            <p class="text-center" id="dechetsCommun">
+                    Sur cette partie vous trouverez les déchets les plus courants, ceux
+                    de notre vie quotidienne
+            </p>
+            <!-- partie avec les flip card -->
+            <div class="row">
+              {% for dechetCommun in dechetsCommuns %}
+                <div class="card-container mt-5 col-sm-4">
+                    <div class="card cardfront flipcard">
+                      <img
+                        src="{{ asset("img/") }}{{ dechetCommun.urlPicto }}"
+                        class="card-img-top"
+                        alt="dechets papier"
+                      />
+                      <div class="card-body">
+                      <h5 class="card-title">{{ dechetCommun.nomCategorie | capitalize }}</h5>
+                      </div>
+                    </div>
+                    <div class="card cardback flipcard">
+                        <div class="card-body">
+                              <h5 class="card-title">{{ dechetCommun.nomCategorie | capitalize }}</h5>
+                              <ul class="card-text">
+                                  {{ dechetCommun.description | raw }}
+                              </ul>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+              </div>
+        </div>
+    </section>
+      <!-- partie avec les autres catégories de déchets -->
+    <section class="bg-colorother">
+        <div class="fontcolor">
+              <h2 class="text-center margehaute">Autre types de déchet</h2>
+              <p class="text-center">
+                    Ces déchets ont un traitements particuliers et necessitent une prise
+                    en charge spécifique. Ils peuvent être traités en déchèterie. 
+              </p>
+             <div class="container">
+                  <div class="row">
+                        {% for autreCategorie in autresCategories %}
+                            <div class="col-3 margehaute">
+                                <img
+                                  class="img-thumbnail angle"
+                                  src="{{ asset("img/") }}{{ autreCategorie.urlPicto }}"
+                                  alt="icône de la catégorie"
+                                 />
+                            </div>
+                            <div class="col-9 margehaute">
+                                <h2 class="titlemargin">{{ autreCategorie.nomCategorie | capitalize }}</h2>
+                                 <p>
+                                  {{ autreCategorie.description }}
+                                </p>
+                            </div>
+                          {% endfor %}
+                    </div>
+              </div>
+          </div>
+      </section>
+{% endblock %}
+

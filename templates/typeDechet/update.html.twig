@@ -1,0 +1,12 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} {{parent()}} - Modifier un type de déchet {% endblock %}
+
+{% block content %}
+
+
+ {{form_start(form, {'attr': {'novalidate' : 'novalidate'}} )}}
+        {{ form_widget(form) }}
+    {{ form_end(form) }}
+    
+{% endblock %}

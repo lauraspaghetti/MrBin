@@ -1,0 +1,33 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} parent() - Calendrier de collecte des déchets{% endblock %}
+
+{% block content %}
+<h2>Calendrier de collecte des déchets</h2>
+
+
+<table>
+    <thead>
+        <th>Jour :</th>
+        <th>Poubelles :</th>
+    </thead>
+
+    <tbody>
+        {% for jourRamassage in AllJoursRamassage %}
+                 <tr>
+                    <td>
+                       <a href="{{ path("mrBin_jourRamassage_show", {id : jourRamassage.id}) }}">{{jourRamassage.nomDuJour}}
+                    </td>
+
+                    <td>
+                        {% for contenant in jourRamassage.contenants %}
+                            {{contenant.nomContenant}}
+                        {% endfor %}
+                    </td> 
+   
+                 </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

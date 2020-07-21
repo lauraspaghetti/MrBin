@@ -1,0 +1,46 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} parent() - Les différents types de déchets{% endblock %}
+
+{% block content %}
+<h2>Les différents types de déchets</h2>
+
+<a href='{{ path("mrBin_typeDechet_create") }}'>Ajouter un type de déchet</a>
+
+
+
+
+        {% for typeDechet in AllTypeDechets %}
+                 
+            <h4>
+                <a href="{{ path("mrBin_typeDechet_show", {id : typeDechet.id}) }}">{{typeDechet.nomTypeDechet}}</a>
+            </h4>
+
+             <h4>
+                    {% for etablissement in typeDechet.etablissements %}
+                        {{etablissement.nomEtablissement}}
+                    {% endfor %}
+            </h4> 
+
+           
+            {% if is_granted("ROLE_USER") %}
+                          
+                
+                <p>
+                    <a href='{{ path("mrBin_typeDechet_update", {id: typeDechet.id}) }}'>Mettre à jour</a>
+                </p>
+
+                <p>
+                    <a href='{{ path("mrBin_typeDechet_delete", {id: typeDechet.id}) }}'>Supprimer</a>
+                </p>
+                
+            {% else %}
+        
+            {% endif %}
+          
+                   
+                
+        {% endfor %}
+  
+
+{% endblock %}

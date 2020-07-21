@@ -1,0 +1,43 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+{{parent()}} - Résultats de recherche {#parent = pour récupérer le contenu du même block qui existe déjà dans base.html.twig#}
+{% endblock %}
+
+{% block content %}
+    <section class="bg-colorother2">
+        <div class="container topformat">
+            <h1 class="formatmargin">Résultat de la recherche</h1>
+            <!--Moteur de recherche-->
+                <div id='react-root'></div>
+            <!--Fin du moteur de recherche-->
+            <p class="mt-5 mb-5 sizefont">
+                Votre recherche renvoie vers le résultat suivant:
+            </p>
+            <h2>Décheteries prennant en charge les déchets de la catégorie {{categorieDechet.nomCategorie | lower }} : </h2>  
+            {% for etablissement in categorieDechet.etablissements %}
+                <div class="card w-75 searchcard shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            {{etablissement.nomEtablissement}}
+                        </h5>
+                        <p class="card-text"> {{etablissement.adresse}} </p>
+                        <p> 
+                            {# Création de la variable intérmédiaire qui liste les catégories de l'établissement #}
+                            {# https://twig.symfony.com/doc/2.x/filters/map.html #}
+                            {% set categories = etablissement.categories | map((categorie) => "#{categorie.nomCategorie}") | join(', ') %}
+                            {# Appel de la variable #}
+                            {{ categories | capitalize }}.
+                        </p>
+                        <a 
+                            href="{{ path("mrBin_searchResults_detail", {id : etablissement.id}) }}" 
+                            class="btn btn-primary bouton"
+                        >
+                            Détails
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div><!-- /.container -->
+   </section>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}  - Nos contenants{% endblock %}
+
+{% block content %}
+{#Ajouter l'id du jour affiché dans le h2#}
+<h2>La collecte du jour : </h2>
+
+<a href='{{ path("mrBin_jourRamassage_showall") }}'>Voir tout le calendrier</a>
+                    
+                    <p>
+                        {{jourRamassage.nomDuJour}} : 
+                    </p>
+
+                    <p>
+                        {% for contenant in jourRamassage.contenants %}
+                            {{contenant.nomContenant}}
+                        {% endfor %}
+                    </p>
+
+                    
+
+{% endblock %}

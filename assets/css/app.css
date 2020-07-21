@@ -1,0 +1,513 @@
+/*-----TEST APP.CSS-----
+-------Pour vérifier si le css est bien chargé, décommenter cette ligne et actualiser la page-----*/
+/* body {
+    background-color    : orange;
+} */
+
+/*---CSS VIEWPORT UNITS---*
+-----https://www.sitepoint.com/css-viewport-units-quick-start/----*/
+
+.fullscreen{
+  width               : 100%;
+  height              : 100vh;
+}
+
+/* les règles communes */
+
+p {
+  font-family         : "Lora", serif;
+  font-size           : 1rem;
+  font-weight         : 400;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family         : "Nunito", sans-serif;
+}
+
+h1 {
+  padding-top         : 50px;
+  text-align          : center;
+  font-weight         : 700;
+  font-size           : 2.5rem;
+}
+
+/* taille des polices */
+h2 {
+  font-size           : 1.5rem;
+  font-weight         : 400;
+}
+
+h3 {
+  font-size           : 1rem;
+  font-weight         : 400;
+}
+
+h4 {
+  font-size           : 0.5rem;
+  font-weight         : 400;
+}
+
+h5 {
+  font-size           : 1rem;
+  font-weight         : 400;
+}
+
+a {cursor             : pointer;
+
+}
+
+/* le header */
+
+header {
+  background-image    : url(../../public/img/wave.svg);
+  background-size     : cover;
+  background-repeat   : no-repeat;
+  height              : 290px;
+  font-size           : 20px;
+  margin-bottom       : 50px;
+  position            : fixed;
+  width               : 100%;
+  top                 : 0;
+  left                : 0;
+  right               : 0;
+  z-index             : 9999;
+}
+.second-color{
+  color: #158662;
+}
+.nav-link:hover{
+  color               : #158662;
+}
+.navbar-nav{
+  margin              : auto;
+}
+
+.bg-green{
+  background-color    : #b7dfd2;
+}
+
+.formatage2 {
+  background-color    : #a0cad6;
+  border-color        : #fafde5;
+  color               : #fafde5;
+}
+/* la partie alertes infos */
+#color-font{
+color                 :#6d788b;
+background-color      :#f6ffc5;
+}
+
+/* la section avec le titre et sous-titre */
+
+.marge {
+  padding-top         : 300px;
+  padding-bottom      : 200px;
+  color               : #f6ffc5;
+}
+
+.bg1 {
+  background-image    : url(../../public/img/img-bg1.jpg);
+  background-size     : cover;
+  background-position : center;
+}
+.alignement {
+  text-align          : center;
+}
+
+/* encadrement de la zone de recherche */
+
+.cadre {
+  border              : solid;
+  border-radius       : 20px;
+  border-color        : #f6ffc5;
+  align-content       : center;
+}
+
+#cadreh2 {
+  margin-bottom       : 50px;
+}
+
+.btncustom {
+  border-color        : #fafde5;
+  color               : #fafde5;
+  margin-left         : 10px;
+  border-radius       : 0.25rem;
+}
+.largeur {
+  max-width           : 700px;
+  margin-bottom       : 100px;
+}
+/* section avec la map */
+
+#sectionmap {
+  text-align          : center;
+  margin-top          : 100px;
+  margin-bottom       : 30px;
+  color               : #6d788b;
+}
+
+.bgcouleur {
+  background          : linear-gradient(#fafde5, #cff0cc);
+}
+
+iframe{
+
+  width               : 100%;
+}
+
+/* formulaire contact */
+
+#titrecontact {
+  margin-top          : 200px;
+  text-align          : center;
+  padding-top         : 50px;
+}
+
+#formattexte {
+  color               : #6d788b;
+}
+
+.espacement {
+  padding-top         : 3em;
+  padding-bottom      : 3em;
+}
+
+.form-group {
+  width               : 400px;
+  padding-top         : 20px;
+}
+
+section .bg-couleur{
+  padding-bottom: 50px;
+}
+
+/* section avec le footer */
+
+footer {
+  background          : #9bb1d6;
+  color               : #f6ffc5;
+}
+
+.iconsize {
+  font-size           : 40px;
+}
+.yellow{
+  color               : #f6ffc5;
+}
+.centrer2 {
+  text-align          : center;
+  padding-top         : 2em;
+}
+li {
+  list-style-type     : none;
+}
+
+footer a:hover{
+  color               : #158662;
+}
+
+/* style barre de recherche */
+
+.btncustom:hover{
+  background-color    : #158662;
+}
+
+/* style suggestions de recherche */
+
+.search-result{
+  background-color    : white;
+  border              : 1px solid #fafde5;
+  border-radius       : 0.25rem !important;
+  padding             : 10px 2px 2px 10px;
+  min-width           : 80%; 
+}
+
+.search-result a{
+  color               : #6d788b;
+}
+
+.search-result a:hover{
+  color               : #158662;
+}
+
+/* section login */
+
+.bg-login {
+  background-color    : #f3fcf2;
+}
+
+.container {
+  max-width           : 1100px;
+  padding             : 1em;
+  margin              : 0 auto;
+}
+ 
+.form-control {
+  background-color    : #b7dfd2;
+  color               : #959dad;
+  border              : 1px solid #fafde5;
+  border-radius       : 0.25rem !important;
+  padding             : 2px;
+  padding-left        : 10px;
+  height              : 40px;
+  max-width           : 80%;
+  margin-top          : 3px;
+  margin-bottom       : 3px;
+}
+
+#toptitle{
+  margin-top          : -30px;
+  padding-top         : 10px;
+  padding-bottom      : 10px;
+  color               : #6d788b;
+  margin-left         : -94px;
+}
+
+.btn{
+  background-color    : #9BB1D6;
+  border-color        : #F6FFC5;
+  color               : #F6FFC5;
+  border-radius       : 0.25rem !important;
+  padding             : 5px 10px 5px 10px;
+}
+
+.logintop{
+  margin-top          : 30px;
+}
+
+.imagebg{
+  height              : 400px;
+  width               : 100%;
+}
+
+.bgright{
+  border-radius       : 15px;
+  border              : #6d788b;
+  border-width        : 1.5px;
+  margin-top          : 30px;
+}
+
+/* Partie subscribre */
+
+.imgmt{
+  margin-top          : 140px;
+}
+
+#toptitle2{
+  color               : #6d788b;
+  font-size           : 2rem;
+  margin-top          : 57px;
+  margin-left         : -44px;
+}
+
+/* Partie about */
+
+#titreabout {
+  margin-top          : 100px;
+  padding-top         : 50px;
+}
+
+/* Page catégories  */
+
+.topsection {
+  margin-top          : 100px;
+  padding-top         : 200px;
+  padding-bottom      : 200px;
+  background          : linear-gradient(#b7dfd260,
+  #88a59c8a ),
+  url(../../public/img/bg_categorie.jpg);
+  background-size     : cover;
+  background-position : center;
+  color               :#f3fcf2;
+}
+
+/* partie les 3 cards qui tournent et icônes de déchets */
+
+.bg-colorfirst{
+  background-color    : #cff0cc;
+  padding-bottom      : 50px;
+}
+
+#topmargin{
+  margin-top          : 50px;
+  color               : #6d788b;
+}
+
+#fontcolor{
+  color               : #6d788b;
+}
+.card-container{
+  perspective         : 200rem;
+  position            : relative;
+  height              : 436px;
+}
+
+.card-container:hover .cardfront{
+  transform           : rotateY(180deg);
+}
+.card-container:hover .cardback{
+  transform           : rotateY(0deg);
+}
+.cardfront{
+  background          :linear-gradient(#f6ffc5,#b7dfd2);
+  text-align          : center;
+}
+
+.cardback{
+  transform           : rotateY(180deg);
+  background-color    : #f6ffc5;
+}
+.cardback h5{
+  text-align          : center;
+}
+
+.flipcard{
+  transition          : all 0.9s;
+  position            : absolute;
+  height              : 100%;
+  width               : 100%;
+  backface-visibility : hidden;
+  border-radius       : 20px;
+  border-color        : #a0cad6;
+  border-width        : 1.5px;
+  width               : 18rem;
+}
+
+.card h5{
+ font-weight          : 700;
+ font-size            : 1.5em;
+ color                : #6d788b;
+}
+
+.card-text li:before{
+  content             : "\1F343";
+  margin-right        : 20px;
+}
+.card-img-top{
+max-width             : 100px;
+max-height            : 100px;
+margin-top            : 50px;
+margin-left           : auto;
+margin-right          : auto;
+}
+.card-body{
+  margin-top          : 50px;
+}
+
+/* règle CSS utilisé dans la partie des 3 icônes et la partie suivante */
+
+.margehaute{
+  margin-top          : 50px;
+  font-weight         : 700;
+  color               : #6d788b;
+}
+
+/* partie avec les autre catégories de déchets */
+
+.titlemargin{
+  margin-top          : 50px;
+  font-weight         : 600;
+}
+
+.fontcolor{
+  color               : #6d788b;
+}
+
+.angle{
+  border-radius       : 10px;
+  padding-left        : 20px;
+  padding-right       : 20px;
+  padding-bottom      : 20px;
+  padding-top         : 20px;
+  border-color        : #a0cad6;
+  border-width        : 3px;
+  background-color    :#fafde5;
+  box-shadow          : 3px 3px 3px #959dad;
+  margin-bottom       : 30px;
+  max-width           : 200px;
+}
+.bg-colorother{
+  background-color    : #fafde5;
+  padding-top         : 50px;
+}
+
+/* page résultat de recherche 1 */
+
+.topformat{
+  margin-top          : 100px;
+  margin-bottom       : 0px;
+  color               : #6d788b;
+}
+.formatmargin{
+  margin-top          : 100px;
+  margin-bottom       : 50px;
+  color               : #6d788b;  
+}
+.searchcard{
+border-color          : #b7dfd2;
+margin-top            : 20px;
+margin-bottom         : 20px;
+border-radius         : 15px;
+}
+
+
+.bouton{
+  background-color    : #cff0cc;
+  color               : #959dad;
+  border-color        : #f6ffc5;
+  box-shadow          : #959dad;
+}
+
+.bouton:hover{
+  background-color    : #158662;
+}
+
+.sizefont{
+  font-size           : 1.5rem;
+}
+.bg-colorother2{
+  background-color    : #cff0cc;
+  padding-top         : 50px;  
+}
+
+/* style barre de recherche résultat */
+
+.borderstyle{
+  border-color        : #6d788b;
+  color               : #6d788b;
+  border-width        : 0.25px; 
+}
+
+/* fiche déchetterie */
+.carte-top{
+  margin-top          : 50px;
+  border-radius       : 10px;
+  margin-bottom       : 50px;
+}
+.toptitle3{
+  margin-top          : 250px;
+  color               : #6d788b;
+}
+
+.style-icon p i{
+  margin-right: 10px;
+}
+
+.style-icon a{
+  margin-top          : 10px;
+  margin-bottom       : 10px;
+  background-color    : #cff0cc;
+  color               : #959dad;
+  border-color        : #f6ffc5;
+  box-shadow          : #959dad;
+}
+.style-icon a:hover{
+  background-color    : #158662;
+}
+.style-icon iframe{
+  width               : 100%;
+  margin-top          : 10px;
+}

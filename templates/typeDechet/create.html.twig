@@ -1,0 +1,13 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+
+    <a href='{{ path("mrBin_typeDechet_showall") }}'>Voir les types de déchet déjà existants</a>
+
+    <h2>Créer une fiche type déchet.</h2>
+    {{form_start(form, {'attr': {'novalidate' : 'novalidate'}} )}}
+        {{ form_widget(form) }}
+    {{ form_end(form) }}
+    
+
+{% endblock %}

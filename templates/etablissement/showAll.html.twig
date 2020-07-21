@@ -1,0 +1,62 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} parent() - Nos établissements{% endblock %}
+
+{% block content %}
+<a href='{{ path("mrBin_etablissement_create") }}'>Ajouter un établissement</a>
+<section class="bg-colorother2">
+    <h1 class="text-center toptitle3">Détail de votre recherche</h1>
+    {% for etablissement in AllEtablissements %}
+        <div class="container">
+                <div class="card w-75 carte-top shadow">
+                    <div class="card-body style-icon">
+                        <h5 class="card-title">
+                        <a href="{{ path("mrBin_etablissement_show", {id : etablissement.id}) }}">  {{etablissement.nomEtablissement}}
+                         </a>
+                         </h5> 
+                        {#L'iframe doit ê dynamique, afficher la longitude et la lattitude de chaque déchett plutôt#}
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.799710802239!2d2.3099545156744985!3d48.86202957928787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fd0b31e7555%3A0x7731a9ef78e80b89!2s1%20Rue%20Fabert%2C%2075007%20Paris!5e0!3m2!1sfr!2sfr!4v1588682806693!5m2!1sfr!2sfr"
+                            width="600"
+                            height="450"
+                            frameborder="0"
+                            style="border: 0;"
+                            allowfullscreen=""
+                            aria-hidden="false"
+                            tabindex="0"
+                        ></iframe>
+                        <p class="card-text mt-3">
+                            Adresse : {{etablissement.adresse}}
+                        </p>
+                        <p> Types de déchets acceptés :
+                            {#Comment gérer les virgules, les points et les maj#}
+                            {#Si c'est le dernier type de déchet affiché, on met un point, sinon une virgule#}
+                            {% for categorie in etablissement.categories %}
+                                {{categorie.nomCategorie | lower }}, 
+                            {% endfor %}
+                        </p> 
+                        <p>
+                            Horaires : {{etablissement.horaires}}
+                        </p> 
+                        <p>
+                            <i class="fas fa-phone-alt"></i> 0{{etablissement.telephone}}
+                            {#Comment gérer le 0 qui n'apparaît pas sur le numéro de téléphone ?#}
+                        </p>
+                        <a
+                        href="'{{ path("mrBin_searchResults_DD")}}"
+                        class="btn btn-primary"
+                        >
+                        Retour
+                        </a>
+                    </div><!--Fin de la div class card body style icons-->
+                </div><!--Fin de la div class cards 75-->
+        </div><!--Fin div class container-->
+                    {% if is_granted("ROLE_USER") %}               
+                        <p><a href='{{ path("mrBin_etablissement_delete", {id: etablissement.id}) }}'>Supprimer</a></p>
+                        <p><a href='{{ path("mrBin_etablissement_update", {id: etablissement.id}) }}'>Mettre à jour</a></p>     
+                        {% else %}
+
+                    {% endif %}
+    {% endfor %}
+</section>
+{% endblock %}

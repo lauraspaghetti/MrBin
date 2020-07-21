@@ -1,0 +1,189 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+
+#--------------------------------------------------UTILISATEUR----------------------------------------------#
+
+app_register:
+    path: /register
+    controller: App\Controller\RegistrationController::register
+
+app_login:
+    path: /login
+    controller: App\Controller\SecurityController::login
+
+app_logout:
+    path: /logout
+    controller: App\Controller\SecurityController::logout
+
+#--------------------------------------------------HOME----------------------------------------------#
+
+
+# /api/dechets/categories ==> renvoie en JSON toutes les catégories des types de déchets
+# api_all_categories_dechets: 
+#     path: /api/dechets/categories
+#     controller: App\Controller\HomeController::getAllCategoriesDechets
+
+# /api/dechets/categories/Plastique => renvoie en JSON tous les types de déchets de la catégorie spécifiée
+
+api_dechets: 
+    path: /api/dechets
+    controller: App\Controller\HomeController::getDechets
+    defaults:
+        categorie: ''
+    requirements:
+        categorie: '\d+'
+
+mrBin_home: 
+    path: /
+    controller: App\Controller\HomeController::main
+
+#-----------------------------------------------RESULTATS RECHERCHE----------------------------------------------#
+
+mrBin_searchResults_DC:
+    path: /resultat/dechets-communs/{id}
+    controller: App\Controller\SearchResultsController::resultatDechetCommun
+    requirements:
+        id: '\d+'
+
+mrBin_searchResults_CD:
+  path: /resultat/categorie-dechet/{id}
+  controller: App\Controller\SearchResultsController::resultatCategorieDecheterie
+  requirements:
+        id: '\d+'
+
+mrBin_searchResults_detail:
+    path: /resultat/decheterie/{id}
+    controller: App\Controller\SearchResultsController::detailRecherche
+    requirements:
+        id: '\d+'
+
+  
+#--------------------------------------------------CATEGORIES----------------------------------------------#
+
+mrBin_categories:
+    path: /categories
+    controller: App\Controller\CategoriesController::main
+
+
+#--------------------------------------------------ETABLISSEMENT----------------------------------------------#
+
+mrBin_etablissement_create:
+    path: /etablissement/creer
+    controller: App\Controller\EtablissementController::create
+
+mrBin_etablissement_showall:
+    path: /etablissement
+    controller: App\Controller\EtablissementController::showAll
+
+mrBin_etablissement_show:
+    path: /etablissement/{id}
+    controller: App\Controller\EtablissementController::show
+    requirements:
+        id: '\d+'
+        
+mrBin_etablissement_update:
+    path: /etablissement/maj/{id}
+    controller: App\Controller\EtablissementController::update
+    requirements:
+        id: '\d+'
+
+mrBin_etablissement_delete:
+    path: /etablissement/supprimer/{id}
+    controller: App\Controller\EtablissementController::delete
+    requirements:
+        id: '\d+'
+
+#--------------------------------------------------MAIRIE----------------------------------------#
+
+mrBin_mairie_create:
+    path: /mairie/creer
+    controller: App\Controller\MairieController::create
+
+mrBin_mairie_showall:
+    path: /mairie
+    controller: App\Controller\MairieController::showAll
+
+mrBin_mairie_show:
+    path: /mairie/{id}
+    controller: App\Controller\MairieController::show
+    requirements:
+        id: '\d+'
+
+mrBin_mairie_delete:
+    path: /mairie/supprimer/{id}
+    controller: App\Controller\MairieController::delete
+    requirements:
+        id: '\d+'
+
+mrBin_mairie_update:
+    path: /mairie/maj/{id}
+    controller: App\Controller\MairieController::update
+    requirements:
+        id: '\d+'
+
+#--------------------------------------------------TYPE DECHETS----------------------------------------#
+
+mrBin_typeDechet_create:
+    path: /type-dechet/creer
+    controller: App\Controller\TypeDechetController::create
+
+mrBin_typeDechet_showall:
+    path: /type-dechet
+    controller: App\Controller\TypeDechetController::showAll
+
+mrBin_typeDechet_show:
+    path: /type-dechet/{id}
+    controller: App\Controller\TypeDechetController::show
+    requirements:
+        id: '\d+'
+
+mrBin_typeDechet_update:
+    path: /typeDechet/maj/{id}
+    controller: App\Controller\TypeDechetController::update
+    requirements:
+        id: '\d+'
+
+mrBin_typeDechet_delete:
+    path: /typeDechet/supprimer/{id}
+    controller: App\Controller\TypeDechetController::delete
+    requirements:
+        id: '\d+'
+
+#--------------------------------------------------CONTENANT----------------------------------------#
+
+mrBin_contenant_create:
+    path: /contenant/creer
+    controller: App\Controller\ContenantController::create
+
+mrBin_contenant_showall:
+    path: /contenant
+    controller: App\Controller\ContenantController::showAll
+
+mrBin_contenant_show:
+    path: /contenant/{id}
+    controller: App\Controller\ContenantController::show
+    requirements:
+        id: '\d+'
+
+#--------------------------------------------------JOUR RAMASSAGE----------------------------------------#
+
+mrBin_jourRamassage_showall:
+    path: /jour-ramassage
+    controller: App\Controller\JourRamassageController::showAll
+
+mrBin_jourRamassage_show:
+    path: /jour-ramassage/{id}
+    controller: App\Controller\JourRamassageController::show
+    requirements:
+        id: '\d+'
+
+
+#--------------------------------------------------STATIC----------------------------------------------#
+
+mrBin_cgv:
+    path: /cgv
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    defaults: 
+        template: 'static/cgv.html.twig'

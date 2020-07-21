@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} {{parent()}} - Nos déchets{% endblock %}
+
+{% block content %}
+<h2>Tous nos déchets</h2>
+
+<a href='{{ path("mrBin_typeDechet_showall") }}'>Voir tous les types de déchet</a>
+                    
+                    <p>
+                        {{typeDechet.nomTypeDechet}}
+                    </p>
+
+                    {# <p>
+                        {{typeDechet.etablissements}}
+                    </p> #}
+
+{% endblock %}

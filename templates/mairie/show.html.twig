@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} {{parent()}} - Nos auteurs{% endblock %}
+
+{% block content %}
+<h2>Mairie</h2>
+
+<a href='{{ path("mrBin_etablissement_showall") }}'>Voir toutes nos mairies</a>
+
+
+                    <h3>
+                        {{mairie.nomMairie}}
+                    </h3>
+                    
+                    <p>
+                        {{mairie.commune}}
+                    </p>
+
+                    <p>
+                        {{mairie.adresse}}
+                    </p>
+
+                    <p>
+                        {{mairie.horaires}}
+                    </p>
+
+
+
+
+{% endblock %}

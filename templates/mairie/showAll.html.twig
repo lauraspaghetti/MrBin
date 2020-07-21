@@ -1,0 +1,57 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %} parent() - Nos établissements{% endblock %}
+
+{% block content %}
+<h2>Tous nos établissements de tri et de revalorisation des déchets</h2>
+
+<a href='{{ path("mrBin_mairie_create") }}'>Ajouter une mairie</a>
+
+
+<table>
+    <thead>
+        <th>Nom :</th>
+        <th>Commune :</th>
+        <th>Adresse : </th>
+        <th>Horaires : </th>
+    </thead>
+
+    <tbody>
+        {% for mairie in AllMairies %}
+                 <tr>
+                    <td>
+                        <a href="{{ path("mrBin_mairie_show", {id : mairie.id}) }}">{{mairie.nomMairie}}
+                    </td>
+                    
+                    <td>
+                        {{mairie.commune}}
+                    </td>
+
+                    <td>
+                        {{mairie.adresse}}
+                    </td>
+
+
+                    <td>
+                        {{mairie.horaires}}
+                    </td>
+
+                   
+
+                    {% if is_granted("ROLE_USER") %}
+                          
+                         <td><a href='{{ path("mrBin_mairie_delete", {id: mairie.id}) }}'>Supprimer</a></td>
+                         <td><a href='{{ path("mrBin_mairie_update", {id: mairie.id}) }}'>Mettre à jour</a></td>
+                
+                     {% else %}
+        
+                        {% endif %}
+
+
+   
+                 </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

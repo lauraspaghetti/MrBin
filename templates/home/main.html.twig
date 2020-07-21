@@ -1,0 +1,86 @@
+{% extends "layout.html.twig" %}
+
+{% block title %}
+{{parent()}} - Accueil {#parent = pour récupérer le contenu du même block qui existe déjà dans base.html.twig#}
+{% endblock %}
+
+{% block content %}
+    
+    <section class="marge bg1">
+        <div 
+            id="color-font" 
+            class="container alert alert-infos text-center" 
+            role="alert"
+        >
+            <h2 class="alert-heading">Infos du jour {{ "now"|date("d/m/Y") }}</h2>
+            {% if (todayJourRamassage.contenants is not null) %}
+                <p> 
+                    {# setlocale(LC_TIME, "fr_FR"); #}
+                    Aujourd'hui on est {{ dateFr }} n'oubliez pas de sortir le ou les bacs suivants : 
+                </p>
+                <ul>
+                    {% for contenant in todayJourRamassage.contenants %}
+                         <li>
+                           {{ contenant.nomContenant | capitalize }}
+                        </li>
+                    {% endfor  %}
+                </ul>
+            {% else %}
+                <p> Pas de poubelles à sortir aujourd'hui. </p>
+            {% endif %}
+        </div>
+        <div class="container">
+            <h1>Mister Bin</h1>
+            <h2 class="alignement">Ne cherchez plus, jetez!</h2>
+            <p class="alignement">
+                Trouvez facilement la déchetterie pour vos déchets
+            </p>
+        </div>
+        <div class="container cadre pt-5 pb-5">
+            <h2 class="text-center" id="cadreh2">
+                Saisissez ici votre recherche
+            </h2>
+                <!--MOTEUR DE RECHERCHE-->
+                    <div id='react-root'></div>
+                <!---FIN MOTEUR DE RECHERCHE-->
+            </div>
+        </div>
+    </section>
+    <section class="bgcouleur">
+        <div class="container">
+            <h2 id="sectionmap">Les déchetteries en un coup d'oeil</h2>
+            <iframe 
+                class="mb-5"
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d71379.96208417251!2d2.2627743974156416!3d48.853700559854914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sd%C3%A9chetterie%20paris!5e0!3m2!1sfr!2sfr!4v1586509253151!5m2!1sfr!2sfr"
+                width="1140"
+                height="450"
+                frameborder="0"
+                style="border: 0;"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0"
+            ></iframe>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Restons en contact</h2>
+                    <p id="formattexte">Si vous avez une suggestion n'hésitez pas à nous écrire.</p>
+                </div>
+                <div class="col-lg-4 col-sm-5">
+                    <div class="form-group">
+                        {{form_start(form, {'attr': {'novalidate' : 'novalidate'}} )}}
+                            {{ form_widget(form) }}
+                        {{ form_end(form) }}
+                    </div><!-- /.form-group -->
+                </div><!-- /.col-lg-4 -->
+                <div class="col-lg-8 col-sm-7">
+                        <img
+                            class="imagebg bgright"
+                            src="{{ asset('../img/beach_clean1.jpg') }}"
+                            alt="image de jeunes gens ramassant des déchets sur une plage"
+                        />
+                </div>
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section>
+{% endblock %}
+
