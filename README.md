@@ -5,7 +5,7 @@ You just have to enter the name or the category of waste you'd like to recycle a
 
 ## If it's a common type of waste 
 
-It gives you information about the type of waste you entered, says in which bin you're supposed to put it. If you want to know more about this type of bin or about any other one, it leads you to the category page. The category page shows you all the types of bin existing, and how to take care of it. Either with the usual bins that everybody have at home, or in a facility. 
+It gives you information about the type of waste you entered and says in which bin you're supposed to put it. If you want to know more about this type of bin or about any other one, it leads you to the category page. The category page shows you all the categories of waste existing, the type of waste that should be taken care of in the usuals bins and the type of waste that has to be processed in a facility. 
 
 ## It it's a type of waste that has to be taken care of at a facility 
 
