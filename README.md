@@ -7,7 +7,7 @@ You just have to enter the name or the category of waste you'd like to recycle a
 
 It gives you information about the type of waste you entered and says in which bin you're supposed to put it. If you want to know more about this type of bin or about any other one, it leads you to the category page. The category page shows you all the categories of waste existing, the type of waste that should be taken care of in the usuals bins and the type of waste that has to be processed in a facility. 
 
-## It it's a type of waste that has to be taken care of at a facility 
+## If it's a type of waste that has to be taken care of at a facility 
 
 Some other types of waste need to be treated or recycled in a waste facility. When you enter a type of waste of this kind in the search engine, Mr. Bin shows you all the facilities in your town that take care of the type of waste entered. A "Details" button is added on every facility's sheet allowing you to know its contact, localization, the other type of waste they take care of and its opening hours. 
 
