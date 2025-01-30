@@ -1,16 +1,21 @@
+Here's the corrected version of your text with some improvements for clarity, grammar, and style:
+
+---
+
 # MrBin
 
-This is my graduation project ! I collaborated with an UX/UI designer of my school to create a web app helping you to treat and recycle waste. He took care the mock-ups and of the HTML/CSS part and I've developped the app using Symfony and React. 
-You just have to enter the name or the category of waste you'd like to recycle and Mr. Bin gives shows you how to take care of it ! 
+This is my graduation project! I collaborated with an UX/UI designer from my school to create a web app that helps you treat and recycle waste. He handled the mockups and the HTML/CSS, while I developed the app using Symfony and React. 
 
-## If it's a common type of waste 
+You just need to enter the name or category of the waste you'd like to recycle, and Mr. Bin will show you how to properly handle it!
 
-It gives you information about the type of waste you entered and says in which bin you're supposed to put it. If you want to know more about this type of bin or about any other one, it leads you to the category page. The category page shows you all the categories of waste existing, the type of waste that should be taken care of in the usuals bins and the type of waste that has to be processed in a facility. 
+## For Common Types of Waste
 
-## If it's a type of waste that has to be taken care of at a facility 
+Mr. Bin provides information about the type of waste you enter and tells you which bin it should go in. If you'd like to learn more about the bin or any other type of waste, the app will direct you to the category page. The category page lists all waste categories, including the types of waste that should go in the regular bins and the types that need to be processed at a facility.
 
-Some other types of waste need to be treated or recycled in a waste facility. When you enter a type of waste of this kind in the search engine, Mr. Bin shows you all the facilities in your town that take care of the type of waste entered. A "Details" button is added on every facility's sheet allowing you to know its contact, localization, the other type of waste they take care of and its opening hours. 
+## For Waste that Must Be Processed at a Facility
 
-## What's next ? 
+Some waste types need to be treated or recycled at a specialized facility. When you enter one of these types of waste, Mr. Bin will show you a list of facilities in your area that handle this waste. Each facility has a "Details" button, allowing you to view contact information, location, other types of waste they accept, and their opening hours.
 
-Mr. Bin only covers the City of Paris, but we are currently working on the next version and other cities will be added. We will also working with more types of waste, allowing the user to find how to take care of any type of waste possible. 
+## What's Next?
+
+Currently, Mr. Bin covers only the City of Paris, but we're working on the next version, which will include additional cities. We are also expanding the list of waste types, so users will be able to find recycling solutions for virtually any type of waste.
